@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build-dev": "cp .env-dev .env && vue-cli-service build && npx http-server dist -p 9090 -P http://localhost:9090?",
+    "build-staging": "cp .env-staging .env && vue-cli-service build && npx http-server dist -p 9090 -P http://localhost:9090?",
+    "build-prod": "cp .env-production .env && vue-cli-service build && npx http-server dist -p 9090 -P http://localhost:9090?"
   },
   "dependencies": {
     "core-js": "^3.6.5",

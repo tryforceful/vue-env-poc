@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :msg="'The .env variable says: ' + theEnvVar"/>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  computed: {
+    theEnvVar() {
+      return process.env.VUE_APP_SECRET_WORD || '<missing>'
+    }
   }
 }
 </script>
