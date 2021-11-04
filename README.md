@@ -1,5 +1,6 @@
-# vue-env-poc
+# Vue .env POC
 
+*Note: All .env variables must start with `VUE_APP_` in order for Vue to ingest them at build time*
 ## Project setup
 ```
 yarn install
@@ -12,13 +13,15 @@ yarn serve
 
 ### Compiles and minifies for production
 ```
-yarn build
+yarn build-dev
+yarn build-staging
+yarn build-prod
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+These will build each of the different dev branches, copying the environment file for each level into `.env` before building:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+.env-dev
+.env-staging
+.env-production
+```
